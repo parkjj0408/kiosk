@@ -9,6 +9,7 @@ import java.util.InputMismatchException;
 public class Main {
     public static void main(String[] args) {
         List<MenuItem> menuItems = new ArrayList<>();
+        List<MenuItem> orderedItems = new ArrayList<>();
         Scanner sc = new Scanner(System.in);
         MenuItem burger1 = new MenuItem("1. ShackBurger  | W ", 6900, " | 토마토, 양상추, 쉑소스가 토핑된 치즈버거");
         MenuItem burger2 = new MenuItem("2. SmokeShack   | W ", 8900, " | 베이컨, 체리 페퍼에 쉑소스가 토핑된 치즈버거");
@@ -46,9 +47,13 @@ public class Main {
                            System.out.println("종료합니다");
                            break;
                        }
+
+
+                       System.out.println();
                    }else{
                        System.out.println("숫자를 다시 확인해주세요");
                    }
+                   orderedItems.add(menuItems.get(n - 1)); // n은 1부터 시작하니까 -1, n-1 = 인덱스 번호
                }
                 catch(Exception e){
                        System.out.println("숫자로 입력해주세요");
@@ -56,6 +61,12 @@ public class Main {
                    }
 
         }
+        System.out.println("---------------- 주문한 메뉴 내역---------------- ");
+           for (MenuItem item : orderedItems) {
+               System.out.println(item);
+           }
+
+
        }
 
 
