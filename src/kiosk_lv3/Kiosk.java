@@ -58,7 +58,8 @@ public class Kiosk {
     //주문내역 출력하는 메서드
     public void printOrder() {
         for (MenuItem menuItem : orderHistory) {
-            System.out.println(menuItem.getName());
+            String burger = menuItem.getName();
+            System.out.println(burger.substring(2));
         }
     
     
