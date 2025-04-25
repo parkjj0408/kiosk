@@ -11,6 +11,7 @@ public class Kiosk {
     //속성
     //MENUITEM을 관리하는 리스트가 필드로 존재
     private List<MenuItem> menuItems = new ArrayList<>();
+    List<MenuItem> orderHistory = new ArrayList<>();
 
 
     //생성자
@@ -18,11 +19,8 @@ public class Kiosk {
 
     public Kiosk(List<MenuItem> menuItems) {
         this.menuItems = menuItems;
-
     }
     //기능
-    //START라는 함수를 사용해서 레벨 2의 메인에서 입력,반복문 로직을 수해해라.
-
     public void start() {
         Scanner sc = new Scanner(System.in);
         int num;
@@ -41,9 +39,11 @@ public class Kiosk {
 
                     if (num >= 1 && num<= menuItems.size()) {
                         System.out.println(menuItems.get(num-1));
+                        orderHistory.add(menuItems.get(num-1));
 
                     } else if (num == 0) {
-                        System.out.println("종료되었습니다");
+                        System.out.println("종료되었습니다, 주문 내역을 출력합니다.");
+                        printOrder();
                         break;
                     } else {
                         System.out.println("메뉴 번호 확인 후 다시 눌러주세요");
@@ -54,7 +54,13 @@ public class Kiosk {
                     sc.next();
                 }
             }
-
-
+    }
+    //주문내역 출력하는 메서드
+    public void printOrder() {
+        for (MenuItem menuItem : orderHistory) {
+            System.out.println(menuItem.getName());
+        }
+    
+    
     }
 }
