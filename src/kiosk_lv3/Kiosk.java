@@ -26,8 +26,7 @@ public class Kiosk {
     public void start() {
         Scanner sc = new Scanner(System.in);
         int num;
-        System.out.println("주문을 할려면 아무 숫자를 눌러 주세요");
-        num = sc.nextInt();
+        System.out.println("=====================메뉴====================");
             for (MenuItem menuItem : menuItems) {
                 System.out.printf("%-15s| ₩%.1f | %s%n",
                         menuItem.getName(),
@@ -38,18 +37,10 @@ public class Kiosk {
                 try {
                     System.out.println("메뉴번호를 눌러주세요, 0을 누르면 종료됩니다");
 
-
                     num = sc.nextInt();
-                    if (num == 1) {
-                        System.out.println(menuItems.get(0));
-                    } else if (num == 2) {
-                        System.out.println(menuItems.get(1));
 
-                    } else if (num == 3) {
-                        System.out.println(menuItems.get(2));
-
-                    } else if (num == 4) {
-                        System.out.println(menuItems.get(3));
+                    if (num >= 1 && num<= menuItems.size()) {
+                        System.out.println(menuItems.get(num-1));
 
                     } else if (num == 0) {
                         System.out.println("종료되었습니다");
