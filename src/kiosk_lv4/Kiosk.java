@@ -3,9 +3,7 @@ package kiosk_lv4;
 import java.util.Scanner;
 import java.util.InputMismatchException;
 public class Kiosk {
-
     private Menu menu;
-
 
     Kiosk(Menu menu) {
         this.menu = menu;
@@ -30,6 +28,7 @@ public class Kiosk {
                         break;
                     case 3 :
                         System.out.println("아직 메뉴 준비중입니다");
+                        break;
                     case 0:
                         System.out.println("프로그램을 종료합니다");
                         return;
@@ -42,7 +41,7 @@ public class Kiosk {
         }
     }
 
-    public void showBurgerMenu() {
+    public void showBurgerMenu() { //버거메뉴만 보여주는 메서드
         menu.showBurgers();
         int input1 = sc.nextInt();
         try {
@@ -64,7 +63,7 @@ public class Kiosk {
                 default:
                     System.out.println("잘못된 입력입니다");
             }
-        } catch (Exception e) {
+        } catch (InputMismatchException e) {
             System.out.println("입력 오류입니다. 숫자를 입력해주세요.");
             sc.nextLine();
         }
