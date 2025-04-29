@@ -4,7 +4,7 @@ public class MenuItem {
     //속성
    private String name;
     private double price;
-    private String burgerInfo;
+    private String info;
 
 
     //생성
@@ -13,7 +13,7 @@ public class MenuItem {
     MenuItem(String name, double price, String burgerInfo) {
         this.name = name;
         this.price = price;
-        this.burgerInfo = burgerInfo;
+        this.info = burgerInfo;
 
     }
 
@@ -26,8 +26,8 @@ public class MenuItem {
         double getPrice(){
             return price;
         }
-        String getBurgerInfo(){
-            return burgerInfo;
+        String getInfo(){
+            return info;
         }
 
     }

@@ -8,17 +8,23 @@ import java.util.List;
 
 
 public class Menu {
+    //속성
    private List<MenuItem> items = new ArrayList<>(); // 햄버거 1개를 담을 그릇
-
+//생성자
     public Menu(List<MenuItem> items) {
         this.items = items;
     }
-    public void showBurgers(){
+
+//기능
+    public List<MenuItem> getItems(){ // 리스트를 리턴하는 메서드
+        return items;
+    }
+    public void showBurgers(){ //햄버거 전체메뉴
         for (MenuItem item : items) {
             System.out.printf("%-15s| ₩%.1f | %s%n",
             item.getName(),
             item.getPrice()/ 1000.0,
-                    item.getBurgerInfo());
+                    item.getInfo());
 
         }
         System.out.println("0번 누르면 뒤로가기");
@@ -29,22 +35,11 @@ public class Menu {
             System.out.printf("%-15s| ₩%.1f | %s%n",
                     menuitem.getName(),
                     menuitem.getPrice()/ 1000.0,
-                    menuitem.getBurgerInfo());
+                    menuitem.getInfo());
         }else{
             System.out.println("잘못된 메뉴 선택입니다");
         }
 
-    }
-    public List<MenuItem> getItems(){ // 리스트를 리턴하는 메서드
-        return items;
-    }
-    public void showMenu(){
-        String menu = "MAIN MENU";
-        System.out.printf("[%10s]%n",menu);
-        System.out.println("1. Burgers");
-        System.out.println("2. Drinks");
-        System.out.println("3. Desserts");
-        System.out.println("0. 종료 | 종료");
     }
 
 

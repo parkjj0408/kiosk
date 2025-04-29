@@ -15,7 +15,7 @@ public class Kiosk {
 
         int num1;
         while (true) {
-            menu.showMenu();
+            showMenu();
             try {
                 System.out.println("번호를 눌러 주세요");
                 num1 = sc.nextInt();
@@ -68,5 +68,14 @@ public class Kiosk {
             sc.nextLine();
         }
     }
+    public void showMenu(){ //키오스크 시작화면으로 전체화면
+        String menu = "MAIN MENU";
+        System.out.printf("[%10s]%n",menu);
+        System.out.println("1. Burgers");
+        System.out.println("2. Drinks");
+        System.out.println("3. Desserts");
+        System.out.println("0. 종료 | 종료");
+    }
+
 }
 
