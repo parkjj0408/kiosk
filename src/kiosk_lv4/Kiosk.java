@@ -2,6 +2,7 @@ package kiosk_lv4;
 
 import java.util.Scanner;
 import java.util.InputMismatchException;
+
 public class Kiosk {
     private Menu menu;
 
@@ -36,18 +37,20 @@ public class Kiosk {
             } catch (InputMismatchException e) {
                 System.out.println("숫자로 입력 바랍니다");
                 sc.next();
+
+
             }
 
         }
     }
 
     public void showBurgerMenu() { //버거메뉴만 보여주는 메서드
-        menu.showBurgers();
+        menu.showBurgers(); //버거메뉴 보여주고 사용자에게 입력받으면
         int input1 = sc.nextInt();
         try {
             switch (input1) {
                 case 1:
-                    menu.showBurger(0);
+                    menu.showBurger(0); //해당 메뉴를 출력하는 메서드
                     break;
                 case 2:
                     menu.showBurger(1);
@@ -59,13 +62,14 @@ public class Kiosk {
                     menu.showBurger(3);
                     break;
                 case 0:
-                    return;
+                    return; //0을 누르면 해당 메서드를 종료하고 위에 메서드로 돌아감.
                 default:
                     System.out.println("잘못된 입력입니다");
             }
         } catch (InputMismatchException e) {
             System.out.println("입력 오류입니다. 숫자를 입력해주세요.");
             sc.nextLine();
+            showBurgerMenu();
         }
     }
     public void showMenu(){ //키오스크 시작화면으로 전체화면
@@ -78,4 +82,3 @@ public class Kiosk {
     }
 
 }
-

@@ -14,9 +14,9 @@ public class Main {
 
 
         Menu menu = new Menu(items);
-       Kiosk kiosk = new Kiosk(menu);
+        Kiosk kiosk = new Kiosk(menu);
 
-      kiosk.start();
+        kiosk.start();
 
     }
 }
